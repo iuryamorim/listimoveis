@@ -34,7 +34,7 @@ def empty_form(request):
 
 
 def call_cms(request):
-    return HttpResponseRedirect(r('imoveis:imoveis'))
+    return HttpResponseRedirect(r('home'))
 
 
 def call_logout(request):

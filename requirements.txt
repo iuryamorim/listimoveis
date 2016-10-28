@@ -8,3 +8,6 @@ psycopg2==2.6.1
 django-extensions==1.6.1
 django-test-without-migrations==0.4
 pytz
+Pillow
+django-storages
+boto

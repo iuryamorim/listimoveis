@@ -27,7 +27,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <a href="imoveis/{{ imovel.slug }}" class="center-block border">
                     <h3 class="text-center"><strong>{{ imovel.name }}</strong></h3>
-                    <img src="{% static '{{ imovel.photo }}' %}" class="img-responsive center-block" alt="{{ imovel.name }}" />
+                    <img src="{{ imovel.photo.url }}" class="img-responsive img-rounded center-block" alt="{{ imovel.name }}" />
                     <h4 class="text-center">{{ imovel.address }}</h4>
                     <p class="text-center">{{ imovel.description }}</p>
                 </a>

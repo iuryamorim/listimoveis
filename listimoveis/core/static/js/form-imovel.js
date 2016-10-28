@@ -24,7 +24,8 @@ var oForm = {
 		slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
 		replace(/-+/g, '-').
 		replace(/^-|-$/g, '');
-		input.val(slug.toLowerCase());
+		var d = new Date();
+		input.val(slug.toLowerCase() + d.getMilliseconds());
 	}
 };
 /****************************************************************************************************************************************/ 

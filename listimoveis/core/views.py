@@ -35,7 +35,6 @@ def search(request, search):
     except:
         return render(request, 'index.html', {'imoveis': imovel_busca, 'alert': True})
 
-    print("-----3----")
     imoveis = list()
     for i in imovel_busca:
         imoveis.append(i)

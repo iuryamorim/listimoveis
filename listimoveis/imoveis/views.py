@@ -21,7 +21,7 @@ def create(request):
 
     imovel = form.save()
 
-    return detail(request, imovel.slug)
+    return HttpResponseRedirect(r('home'))
 
 
 def detail(request, slug):
@@ -57,4 +57,4 @@ def update(request, slug):
     imovel.id = data.pk
     imovel.save()
 
-    return detail(request, imovel.slug)
+    return HttpResponseRedirect(r('home'))
