@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Cadastrar Imóvel{% endblock title %}
+
+{% block content %}
+<!-- OVERVIEW -->
+<div class="row">
+    <div class="container">
+        <h1>Cadastrar</h1>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+             <form method="post" id="jqForm"  enctype="multipart/form-data">
+                 {% csrf_token %}
+                 {{ form.non_field_errors }}
+                 {{ form.slug.as_hidden }}
+                 <div class="form-group">
+                    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                        {{ form.name.errors }}
+                        {{ form.name }}
+                 </div>
+                 <div class="form-group">
+                    <label for="{{ form.address.id_for_label }}">{{ form.address.label }}</label>
+                        {{ form.address.errors }}
+                        {{ form.address }}
+
+                 <div class="form-group">
+                    <label for="{{ form.cep.id_for_label }}">{{ form.cep.label }}</label>
+                        {{ form.cep.errors }}
+                        {{ form.cep }}
+                 </div>
+                 <div class="form-group">
+                    <label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
+                        {{ form.description.errors }}
+                        {{ form.description }}
+                 </div>
+                 <div class="form-group">
+                    <label for="{{ form.photo.id_for_label }}">{{ form.photo.label }}</label>
+                        {{ form.photo.errors }}
+                        {{ form.photo }}
+                 </div>
+                 <input type="submit" class="btn btn-primary pull-right" value="Salvar"/>
+             </form>
+        </div>
+    </div>
+</div>
+<!-- OVERVIEW -->
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/form-imovel.js' %}"></script>
+{% endblock script %}

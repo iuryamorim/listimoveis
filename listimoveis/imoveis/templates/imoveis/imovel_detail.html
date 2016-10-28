@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block style %}
+<link href="{% static 'css/imoveil-menu.css' %}" rel="stylesheet" />
+{% endblock style %}
+
+{% block content %}
+    <!-- OVERVIEW -->
+<div class="row">
+    <div class="container">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="center-block border">
+                <h3 class="text-center"><strong>{{ imovel.name }}</strong></h3>
+                <img src="{% static '{{ imovel.photo }}' %}" class="img-responsive center-block" alt="{{ imovel.name }}" />
+                <h4 class="text-center">{{ imovel.address }}</h4>
+                <p class="text-center">{{ imovel.description }}</p>
+            </div>
+            {% if request.user.is_authenticated %}
+                <a href="delete"  class="btn btn-danger pull-right">Excluir</a>
+                <a href="alter" style="margin-right: t5px" class="btn btn-warning pull-right">Alterar</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- OVERVIEW -->
+{% endblock content %}
