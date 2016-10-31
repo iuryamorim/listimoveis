@@ -22,9 +22,6 @@ class Imovel(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return r('speaker_detail', slug=self.slug)
-
     def image_tag(self):
         return mark_safe('<img src="%s" width="150" height="150" />' % (self.photo.url))
     image_tag.short_description = 'Foto'
